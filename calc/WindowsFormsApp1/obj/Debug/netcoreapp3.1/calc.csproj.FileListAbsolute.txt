@@ -1,0 +1,15 @@
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\bin\Debug\netcoreapp3.1\calc.exe
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\bin\Debug\netcoreapp3.1\calc.deps.json
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\bin\Debug\netcoreapp3.1\calc.runtimeconfig.json
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\bin\Debug\netcoreapp3.1\calc.runtimeconfig.dev.json
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\bin\Debug\netcoreapp3.1\calc.dll
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\bin\Debug\netcoreapp3.1\calc.pdb
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.Form1.resources
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\obj\Debug\netcoreapp3.1\calc.csproj.GenerateResource.cache
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\obj\Debug\netcoreapp3.1\calc.AssemblyInfoInputs.cache
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\obj\Debug\netcoreapp3.1\calc.AssemblyInfo.cs
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\obj\Debug\netcoreapp3.1\calc.csproj.CoreCompileInputs.cache
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\obj\Debug\netcoreapp3.1\calc.dll
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\obj\Debug\netcoreapp3.1\calc.pdb
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\obj\Debug\netcoreapp3.1\calc.genruntimeconfig.cache
+C:\Users\Don Li\Documents\Github\CSharp\calc\WindowsFormsApp1\obj\Debug\netcoreapp3.1\calc.csprojAssemblyReference.cache
