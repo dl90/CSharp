@@ -3,11 +3,12 @@
 namespace used to organize your code. It is a container for classes and other namespaces
 
 ```c#
+/* simple types */
 int num = 5;              // 32 bit signed
 long numL = 2147483647L;  // 64 bit signed
 float numF = 5.75F;       // 3.4e38 (approx)
 double numD = 5.99D;      // 3.4e308 (approx)
-decimal numDec = 1.234;   // 28~29 sig-figs (precision)
+decimal numDec = 1.234;   // 28~29 sig-figs (precise)
 
 char myLetter = 'D';      // ASCII chars + [/n... etc]
 string myText = "Hello";
@@ -44,8 +45,16 @@ namespace test
 {
   class Program
   {
+    static void Main(string[] args)
+    {
+      Console.WriteLine("Hello World!");
+      string userName = Console.ReadLine().Trim();
+      Console.WriteLine($"hi {username}");
+      Method();
+      MethodArg(1, "Test");
+    }
 
-    // void == method has no return
+    // no return
     static void Method()
     {
       for(int i = 0; i < 10; i++) {
@@ -73,15 +82,6 @@ namespace test
     static double PlusMethod(double x, double y)
     {
       return x + y;
-    }
-
-    static void Main(string[] args)
-    {
-      Console.WriteLine("Hello World!");
-      string userName = Console.ReadLine();
-      Console.WriteLine($"hi {username}");
-      Method();
-      MethodArg(1, "Test");
     }
   }
 }

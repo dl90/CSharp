@@ -57,6 +57,12 @@ namespace WindowsFormsApp1
                 while (arg.Contains(op))
                 {
                     idx = arg.FindIndex(x => x == op);
+
+                    if (idx == 0 || idx == arg.Count)
+                    {
+                        break;
+                    }
+
                     left = convert(arg[idx - 1]);
                     right = convert(arg[idx + 1]);
 
