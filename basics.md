@@ -52,6 +52,9 @@ namespace test
       Console.WriteLine($"hi {username}");
       Method();
       MethodArg(1, "Test");
+
+      // waits for key before exit
+      Console.ReadKey();
     }
 
     // no return
@@ -86,3 +89,17 @@ namespace test
   }
 }
 ```
+
+> .sln
+>
+> Solution: one solution can have multiple projects in any supported .NET language (C#, F#, etc)
+>
+> These are compiled together as a single solution (program)
+
+- Abstraction/Encapsulation: { data/details }
+- Inheritance: generalization
+- Polymorphism: distinct objects can use distinct interfaces
+
+Reference types: stored as references (Objects)
+
+Primitives: stored as values (int, double, etc)
