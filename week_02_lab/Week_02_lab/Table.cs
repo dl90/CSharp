@@ -15,12 +15,12 @@ namespace Week2_lab
             }
         }
 
-        static int Square(int arg)
+        private int Square(int arg)
         {
             return arg * arg;
         }
 
-        static int Cube(int arg)
+        private int Cube(int arg)
         {
             return arg * arg * arg;
         }
