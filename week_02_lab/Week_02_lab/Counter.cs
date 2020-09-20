@@ -5,10 +5,10 @@ namespace Week2_lab
     class Counter
     {
 
-        int[] nums;
-        int neg;
-        int pos;
-        int zeros;
+        private int[] nums;
+        private int neg;
+        private int pos;
+        private int zeros;
 
         public Counter(int arg)
         {
@@ -18,7 +18,7 @@ namespace Week2_lab
         }
 
 
-        public void Query(int count)
+        private void Query(int count)
         {
             for(int i = 0; i < count; i++)
             {
@@ -28,7 +28,7 @@ namespace Week2_lab
             }
         }
 
-        public void Print()
+        private void Print()
         {
             for(int i = 0; i < nums.Length; i++)
             {

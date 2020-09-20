@@ -1,4 +1,4 @@
-﻿namespace Bank
+﻿namespace Examples
 {
     class Account
     {
@@ -23,7 +23,7 @@
             }
             private set // only useable within class (constructor call)
             {
-                if(value > 0.0m) // m => double
+                if (value > 0.0m) // m => double
                 {
                     balance = value;
                 }
@@ -32,7 +32,7 @@
 
         public void Deposit(decimal arg)
         {
-            if(arg > 0.0m)
+            if (arg > 0.0m)
             {
                 balance += arg;
             }
