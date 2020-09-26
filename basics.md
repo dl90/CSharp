@@ -103,3 +103,24 @@ namespace test
 Reference types: stored as references (Objects)
 
 Primitives: stored as values (int, double, etc)
+
+```c#
+class test
+{
+  // auto implemented property
+  public string Name { get; set; }
+  private string test;
+
+  public string Test
+  {
+    get
+    {
+      return test;
+    }
+    set
+    {
+      test = value;
+    }
+  }
+}
+```
