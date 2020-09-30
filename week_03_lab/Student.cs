@@ -21,7 +21,7 @@ namespace week_03_lab
             }
             set
             {
-                if (value.Trim().Length >= 0)
+                if (value.Trim().Length > 0)
                 {
                     name = value;
                 }
