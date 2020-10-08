@@ -1,20 +1,25 @@
-# C# basics
+# C# basics-0
 
 namespace used to organize your code. It is a container for classes and other namespaces
 
 ```c#
 /* simple types */
+byte numB = 255;          // 8 bit unsigned
+sbyte numSB = 127;       // 8 bit signed
+short numS = -1;          // 16 bit signed
 int num = 5;              // 32 bit signed
 long numL = 2147483647L;  // 64 bit signed
+ushort unumS = 1;         // 16 bit unsigned
 float numF = 5.75F;       // 3.4e38 (approx)
 double numD = 5.99D;      // 3.4e308 (approx)
 decimal numDec = 1.234;   // 28~29 sig-figs (precise)
 
 char myLetter = 'D';      // ASCII chars + [/n... etc]
+char letterB = (char) 66; // B
 string myText = "Hello";
 
 bool myBool = true;
-
+var x = 'x';
 const int myNum = 15;
 ```
 
@@ -96,9 +101,9 @@ namespace test
 >
 > These are compiled together as a single solution (program)
 
-- Abstraction/Encapsulation: { data/details }
-- Inheritance: generalization
-- Polymorphism: distinct objects can use distinct interfaces
+* Abstraction/Encapsulation: { data/details }
+* Inheritance: generalization
+* Polymorphism: distinct objects can use distinct interfaces
 
 Reference types: stored as references (Objects)
 
@@ -107,8 +112,8 @@ Primitives: stored as values (int, double, etc)
 ```c#
 class test
 {
-  // auto implemented property
-  public string Name { get; set; }
+  // auto implemented property with private setter
+  public string Name { get; private set; }
   private string test;
 
   public string Test
