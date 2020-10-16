@@ -3,6 +3,8 @@
 * generic collections: type safe at compile time, better performance
 * non generic collections: stores as objects, require casting
 
+---
+
 ## Dictionary
 
 ```c#

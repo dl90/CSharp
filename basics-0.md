@@ -1,4 +1,4 @@
-# C# basics-0
+# Types and syntax
 
 namespace used to organize your code. It is a container for classes and other namespaces
 
@@ -6,10 +6,12 @@ namespace used to organize your code. It is a container for classes and other na
 /* simple types */
 byte numB = 255;          // 8 bit unsigned
 sbyte numSB = 127;       // 8 bit signed
+
 short numS = -1;          // 16 bit signed
+ushort unumS = 1;         // 16 bit unsigned
+
 int num = 5;              // 32 bit signed
 long numL = 2147483647L;  // 64 bit signed
-ushort unumS = 1;         // 16 bit unsigned
 float numF = 5.75F;       // 3.4e38 (approx)
 double numD = 5.99D;      // 3.4e308 (approx)
 decimal numDec = 1.234;   // 28~29 sig-figs (precise)
@@ -24,11 +26,17 @@ const int myNum = 15;
 ```
 
 ```c#
-// implicit casting [char -> int -> long -> float -> double]
+/*
+  implicit casting [char -> int -> long -> float -> double]
+  no loss of precision
+*/
 int myInt = 9;
 double myDouble = myInt;    // int -> double
 
-// explicit casting [double -> float -> long -> int -> char]
+/*
+  explicit casting [double -> float -> long -> int -> char]
+  possible loss of precision, must specify cast
+*/
 double myDouble = 9.78;
 int myInt = (int) myDouble; // double -> int
 
