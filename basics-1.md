@@ -34,14 +34,32 @@ public static int Add(params int[] numbers) {
 }
 ```
 
-### out
+### ref
 
-* arguments passed by reference, modifications to the argument is kept
-* similar to **ref**, but requires the argument to be initialized first
+* arg passed by reference
+* arg must be initialized first
 
 ```c#
-public static void methodX(out int num) {
-    num = 42;
+var x = 1
+Ref(ref x);
+
+static void Ref(ref int arg) {
+  arg = 42
+}
+
+```
+
+### out
+
+* arg passed by reference
+* arg doesn't have to be initialized
+
+```c#
+int y;
+Out(out y);
+
+static void Out(out int arg) {
+    arg = 42;
 }
 ```
 
@@ -77,7 +95,7 @@ is-a relationship: Student => BCITStudent => ComputingStudent => FSWDStudent
 * C# only has single inheritance (class b: a)
 * child instantiation = runtime calls parent constructor
 
-> child constructors must invoke one the parents constructor during instantiation
+> child constructors must invoke one of the parent's constructor during instantiation
 
 ### method overriding
 
@@ -98,7 +116,7 @@ public override void methodX() {
 class child : parent
 {
   // invoke specific parent constructor. In this case, one that takes a string arg
-  public child() : base("arg") { }
+  public child(string arg) : base(arg) { }
 }
 ```
 
@@ -109,7 +127,7 @@ class self
     Console.WriteLine("Default");
   }
 
-  // invoke another constructor, this() refers to default constructor with no args
+  // invoke another constructor first, this() refers to default constructor with no args
   public self(string arg): this() {
     Console.WriteLine(arg);
   }
@@ -210,6 +228,7 @@ static void Poly(Shape shape) {
   }
 }
 
+// better to use interface
 static void Draw(IDrawable arg) {
   arg.Draw()
 }
@@ -244,5 +263,8 @@ class MyException: Exception
 }
 ```
 
+```c#
 try {} finally {}
+
 try {} using {}
+```

@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace week_06
 {
     class Program
@@ -11,9 +13,44 @@ namespace week_06
 
             Poly(circle1);
             Poly(rectangle1);
+            Console.WriteLine();
 
             Test(circle1);
             Test(rectangle1);
+            Console.WriteLine();
+
+            int[] arg = { 1, 2, 3, 4, 5 };
+            Sum(arg);
+            Sum(1, 2, 3, 4, 5);
+            Console.WriteLine();
+
+            new Test("howdy");
+            Console.WriteLine();
+
+            int x = 1;
+            Ref(ref x);
+            Console.WriteLine(x);
+
+            int y;
+            Out(out y);
+            Console.WriteLine(y);
+        }
+
+        static void Ref(ref int arg)
+        {
+            arg = 42;
+        }
+
+        static void Out(out int arg)
+        {
+            arg = 42;
+        }
+
+        static void Sum(params int[] arg)
+        {
+            int sum = 0;
+            foreach (int val in arg) sum += val;
+            Console.WriteLine(sum);
         }
 
         static void Poly(Shape shape)

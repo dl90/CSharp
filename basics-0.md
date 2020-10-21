@@ -3,26 +3,30 @@
 namespace used to organize your code. It is a container for classes and other namespaces
 
 ```c#
-/* simple types */
-byte numB = 255;          // 8 bit unsigned
-sbyte numSB = 127;       // 8 bit signed
+/* value types */
+sbyte numSB = -128;        // 8 bit signed
+byte numB = 255;           // 8 bit unsigned immutable
 
-short numS = -1;          // 16 bit signed
-ushort unumS = 1;         // 16 bit unsigned
+short numS = -1;           // 16 bit signed
+ushort unumS = 1;          // 16 bit unsigned
 
-int num = 5;              // 32 bit signed
-long numL = 2147483647L;  // 64 bit signed
-float numF = 5.75F;       // 3.4e38 (approx)
-double numD = 5.99D;      // 3.4e308 (approx)
-decimal numDec = 1.234;   // 28~29 sig-figs (precise)
+int num = 5;               // 32 bit signed
+long numL = 2147483647L;   // 64 bit signed
 
-char myLetter = 'D';      // ASCII chars + [/n... etc]
-char letterB = (char) 66; // B
+float numF = 5.75F;        // 3.4e38 (approx)
+double numD = 5.99D;       // 3.4e308 (approx)
+decimal numDec = 1.234M;   // 28~29 sig-figs (precise)
+
+char myLetter = 'D';       // ASCII chars + [/n... etc]
+char letterB = (char) 66;  // B
 string myText = "Hello";
 
 bool myBool = true;
 var x = 'x';
 const int myNum = 15;
+
+// nullable value types
+int? test = null;
 ```
 
 ```c#
@@ -65,6 +69,9 @@ namespace test
       Console.WriteLine($"hi {username}");
       Method();
       MethodArg(1, "Test");
+
+      var val = Console.ReadKey().KeyChar;
+      Console.WriteLine(val);
 
       // waits for key before exit
       Console.ReadKey();

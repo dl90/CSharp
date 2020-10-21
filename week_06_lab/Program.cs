@@ -8,26 +8,25 @@ namespace week_06_lab
         {
             Bank bank = new Bank();
             int acc1Num = bank.AddSavingsAccount(200m, 0.03m);
-            int acc2Num = bank.AddCheckingAccount(300m, 2m);
+            int acc2Num = bank.AddCheckingAccount(300m, 2.95m);
 
             SavingsAccount sa1 = (SavingsAccount)bank.GetAccount(acc1Num);
             CheckingAccount ca1 = (CheckingAccount)bank.GetAccount(acc2Num);
 
             Console.WriteLine(sa1.Balance);
             sa1.Credit(2000m);
-            ca1.Debit(300m);
-
             Console.WriteLine(sa1.CalculateInterest());
-            ca1.Credit(200m);
 
-            sa1 = null;
-            ca1 = null;
+            ca1.Debit(-1m);
+            ca1.Debit(300m);
+            ca1.Credit(1m);
+            ca1.Credit(300m);
 
-            sa1 = (SavingsAccount)bank.GetAccount(acc1Num);
-            ca1 = (CheckingAccount)bank.GetAccount(acc2Num);
+            var x = (SavingsAccount)bank.GetAccount(acc1Num);
+            var y = (CheckingAccount)bank.GetAccount(acc2Num);
 
-            Console.WriteLine(sa1.Balance);
-            Console.WriteLine(ca1.Balance);
+            Console.WriteLine(x.Balance);
+            Console.WriteLine(y.Balance);
         }
     }
 }
