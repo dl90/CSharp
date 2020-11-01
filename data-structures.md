@@ -28,28 +28,44 @@ try
   dict.Add(2, 'Jane'); // add throws exception if key already exists
   dict[3] = 'Err'; // indexer throws exception if key doesn't exist
 }
-catch(Exception e)
-{
-Console.WriteLine(e.message);
-}
+catch(Exception e) { Console.WriteLine(e.message); }
+
 
 string val;
 dict.TryGetValue(3, out val); // returns true && assigns val if 3 exists
 
-foreach( KeyValuePair<int, string> pair in dict ) // note: using foreach only allows reading, not writing
-{
+foreach( KeyValuePair<int, string> pair in dict ) { // note: using foreach only allows reading, not writing
   Console.WriteLine($"{pair.Key} | {pair.Value}");
 }
 
 Dictionary<int, string>.ValueCollection vals = dict.Values; // iterable vals only
-foreach(string val in vals)
-{
+foreach(string val in vals) {
   Console.WriteLine(val);
 }
 
 Dictionary<int, string>.KeyCollection keys = dict.Keys; // iterable keys only
-foreach(int key in keys)
-{
+foreach(int key in keys) {
   Console.WriteLine(key);
+}
+```
+
+## Hashtable
+
+```c#
+Hashtable table = new Hashtable();
+
+table.Add("key1", "val")
+table["key1"] = "new";
+
+try
+{
+  table.Add("key1", 1); // exception if key already exists
+}
+catch(Exception e) { Console.WriteLine(e.message); }
+
+if (table.ContainsKey("key1")) Console.WriteLine("key taken");
+
+foreach( DictionaryEntry D in table) {
+  Console.WriteLine($"{D.Key} {D.Value}");
 }
 ```
