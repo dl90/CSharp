@@ -29,13 +29,13 @@ namespace week_08_lab
             }
         }
 
-        private void addDigit(char arg)
+        private void addDigit(string arg)
         {
             output.Text += arg;
             curNum += arg;
         }
 
-        private void addOperator(char arg)
+        private void addOperator(string arg)
         {
             ops.Add(curNum);
             ops.Add(arg.ToString());
@@ -45,14 +45,14 @@ namespace week_08_lab
 
         private void num_Click(object sender, EventArgs e)
         {
-            string str = sender.ToString();
-            addDigit(str[str.Length - 1]);
+            Button btn = (Button)sender;
+            addDigit(btn.Text);
         }
 
         private void operator_Click(object sender, EventArgs e)
         {
-            string str = sender.ToString();
-            addOperator(str[str.Length - 1]);
+            Button btn = (Button)sender;
+            addOperator(btn.Text);
         }
 
         private void btn_equal_Click(object sender, EventArgs e)
