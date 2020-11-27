@@ -17,12 +17,12 @@
         {
             get
             {
-                return name;
+               return name;
             }
 
             set
             {
-                if (value.Trim().Length > 0) name = value;
+                if (Util.CheckEmptyString(value)) name = value;
             }
 
         }
@@ -36,7 +36,7 @@
 
             set
             {
-                if (value >= 0) count = value;
+                if (Util.CheckValidCount(value)) count = value;
             }
         }
 
@@ -49,7 +49,7 @@
 
             set
             {
-                if (value >= 0) price = value;
+                if (Util.CheckValidPrice(value)) price = value;
             }
         }
     }

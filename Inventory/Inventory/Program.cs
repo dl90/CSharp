@@ -11,9 +11,12 @@ namespace Inventory
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            //Application.Run(new Login());
-            Application.Run(new AddUser());
+
+            // Application.Run(new LoginForm());
+            // Application.Run(new AddUserForm());
+            // Application.Run(new Console());
+            // Application.Run(new UsersForm());
+            Application.Run(new InventoryForm());
         }
     }
 }

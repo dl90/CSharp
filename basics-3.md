@@ -17,6 +17,8 @@ public long Fib(int i) {
 }
 ```
 
+## [Extension methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
+
 ```c#
 public static class StringExtensions {
   public static string Shorten(this string str, int numOfWords) {
