@@ -21,7 +21,17 @@ namespace Inventory
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        private System.Windows.Forms.Panel OptionsPanel;
+        private System.Windows.Forms.Label ItemNameLabel;
+        private System.Windows.Forms.Label ItemPriceLabel;
+        private System.Windows.Forms.Label ItemCountLabel;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.TextBox ItemPriceTextBox;
+        private System.Windows.Forms.TextBox ItemCountTextBox;
+        private System.Windows.Forms.TextBox ItemNameTextBox;
+        private System.Windows.Forms.DataGridView ItemDataGridView;
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -55,14 +65,14 @@ namespace Inventory
             this.OptionsPanel.Controls.Add(this.ItemPriceLabel);
             this.OptionsPanel.Controls.Add(this.ItemCountLabel);
             this.OptionsPanel.Controls.Add(this.ItemNameLabel);
-            this.OptionsPanel.Location = new System.Drawing.Point(23, 453);
+            this.OptionsPanel.Location = new System.Drawing.Point(47, 456);
             this.OptionsPanel.Name = "OptionsPanel";
             this.OptionsPanel.Size = new System.Drawing.Size(600, 222);
             this.OptionsPanel.TabIndex = 0;
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(453, 84);
+            this.UpdateButton.Location = new System.Drawing.Point(453, 81);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(110, 40);
             this.UpdateButton.TabIndex = 8;
@@ -78,6 +88,7 @@ namespace Inventory
             this.DeleteButton.TabIndex = 7;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // AddButton
             // 
@@ -152,7 +163,7 @@ namespace Inventory
             this.ItemDataGridView.RowHeadersWidth = 62;
             this.ItemDataGridView.RowTemplate.Height = 33;
             this.ItemDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ItemDataGridView.Size = new System.Drawing.Size(623, 426);
+            this.ItemDataGridView.Size = new System.Drawing.Size(667, 426);
             this.ItemDataGridView.TabIndex = 1;
             this.ItemDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemDataGridView_Click);
             // 
@@ -160,7 +171,7 @@ namespace Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 689);
+            this.ClientSize = new System.Drawing.Size(691, 690);
             this.Controls.Add(this.ItemDataGridView);
             this.Controls.Add(this.OptionsPanel);
             this.Name = "InventoryForm";
@@ -171,19 +182,5 @@ namespace Inventory
             this.ResumeLayout(false);
 
         }
-
-        #endregion
-
-        private System.Windows.Forms.Panel OptionsPanel;
-        private System.Windows.Forms.Label ItemNameLabel;
-        private System.Windows.Forms.Label ItemPriceLabel;
-        private System.Windows.Forms.Label ItemCountLabel;
-        private System.Windows.Forms.Button UpdateButton;
-        private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.TextBox ItemPriceTextBox;
-        private System.Windows.Forms.TextBox ItemCountTextBox;
-        private System.Windows.Forms.TextBox ItemNameTextBox;
-        private System.Windows.Forms.DataGridView ItemDataGridView;
     }
 }

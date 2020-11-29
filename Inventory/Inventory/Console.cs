@@ -47,32 +47,47 @@ namespace Inventory
             this.Close();
         }
 
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
+        private bool AlreadyOpen<T>()
         {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+            bool alreadyOpened = false;
+            foreach(Form child in this.MdiChildren)
+            {
+                if (child is T) alreadyOpened = true;
+            }
+            return alreadyOpened;
         }
 
         private void AddNewUserMenuItem_Click(object sender, EventArgs e)
         {
-            AddUserForm form = new AddUserForm();
-            form.Show();
+            bool alreadyOpen = AlreadyOpen<AddUserForm>();
+            if (!alreadyOpen)
+            {
+                AddUserForm form = new AddUserForm();
+                form.MdiParent = this;
+                form.Show();
+            }
         }
 
+        private void InventoryMenuManage_Click(object sender, EventArgs e)
+        {
+            bool alreadyOpen = AlreadyOpen<InventoryForm>();
+            if (!alreadyOpen)
+            {
+                InventoryForm form = new InventoryForm();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void ViewUsersMenuItem_Click(object sender, EventArgs e)
+        {
+            bool alreadyOpen = AlreadyOpen<UsersForm>();
+            if (!alreadyOpen)
+            {
+                UsersForm form = new UsersForm();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
     }
 }
