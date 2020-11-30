@@ -46,5 +46,14 @@ namespace Inventory.Classes
                 return false;
             }
         }
+
+        internal static decimal ReAverage(decimal prevPrice, int prevCount, decimal purchasePrice, int purchaseCount)
+        {
+            decimal prevTotalPrice = prevPrice * prevCount;
+            decimal newTotalPrice = prevTotalPrice + purchasePrice;
+
+            int newCount = prevCount + purchaseCount;
+            return newTotalPrice / newCount;
+        }
     }
 }

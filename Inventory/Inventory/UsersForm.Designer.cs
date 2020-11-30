@@ -36,9 +36,8 @@ namespace Inventory
             // 
             // UsersDataGridView
             // 
-            this.UsersDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.UsersDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UsersDataGridView.GridColor = System.Drawing.Color.Black;
             this.UsersDataGridView.Location = new System.Drawing.Point(13, 12);
             this.UsersDataGridView.MultiSelect = false;
             this.UsersDataGridView.Name = "UsersDataGridView";
@@ -62,8 +61,8 @@ namespace Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(546, 552);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(546, 536);
             this.Controls.Add(this.DeleteUserButton);
             this.Controls.Add(this.UsersDataGridView);
             this.ForeColor = System.Drawing.Color.Black;

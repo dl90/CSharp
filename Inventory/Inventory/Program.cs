@@ -17,6 +17,7 @@ namespace Inventory
             // Application.Run(new Console());
             // Application.Run(new UsersForm());
             // Application.Run(new InventoryForm());
+            // Application.Run(new PurchaseForm());
         }
     }
 }

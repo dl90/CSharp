@@ -156,14 +156,15 @@ namespace Inventory
             this.ItemDataGridView.AllowUserToAddRows = false;
             this.ItemDataGridView.AllowUserToDeleteRows = false;
             this.ItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ItemDataGridView.Location = new System.Drawing.Point(12, 12);
+            this.ItemDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ItemDataGridView.Location = new System.Drawing.Point(0, 0);
             this.ItemDataGridView.MultiSelect = false;
             this.ItemDataGridView.Name = "ItemDataGridView";
             this.ItemDataGridView.ReadOnly = true;
             this.ItemDataGridView.RowHeadersWidth = 62;
             this.ItemDataGridView.RowTemplate.Height = 33;
             this.ItemDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ItemDataGridView.Size = new System.Drawing.Size(667, 426);
+            this.ItemDataGridView.Size = new System.Drawing.Size(691, 426);
             this.ItemDataGridView.TabIndex = 1;
             this.ItemDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemDataGridView_Click);
             // 

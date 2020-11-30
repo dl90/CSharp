@@ -43,6 +43,8 @@ namespace Inventory
             // 
             // AddUserPanel
             // 
+            this.AddUserPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.AddUserPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AddUserPanel.Controls.Add(this.AddUserButton);
             this.AddUserPanel.Controls.Add(this.PasswordVerifyLabel);
             this.AddUserPanel.Controls.Add(this.PasswordVerifyTextbox);
@@ -128,15 +130,15 @@ namespace Inventory
             this.UsernameLabel.TabIndex = 0;
             this.UsernameLabel.Text = "Username";
             // 
-            // AddUser
+            // AddUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(498, 461);
             this.Controls.Add(this.AddUserPanel);
-            this.ForeColor = System.Drawing.Color.White;
-            this.Name = "AddUser";
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Name = "AddUserForm";
             this.Text = "AddUser";
             this.AddUserPanel.ResumeLayout(false);
             this.AddUserPanel.PerformLayout();

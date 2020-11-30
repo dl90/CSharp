@@ -8,6 +8,10 @@ namespace Inventory
 {
     public partial class InventoryForm : Form
     {
+        private string ItemName;
+        private int ItemCount;
+        private decimal ItemPrice;
+
         public InventoryForm()
         {
             InitializeComponent();
@@ -34,16 +38,15 @@ namespace Inventory
             if (!ValidateFormInput()) MessageBox.Show("Invalid input");
             else
             {
-                string name = ItemNameTextBox.Text.Trim();
-                string count = ItemCountTextBox.Text.Trim();
-                string price = ItemPriceTextBox.Text.Trim();
+                ItemName = ItemNameTextBox.Text.Trim();
+                ItemCount = Convert.ToInt32(ItemCountTextBox.Text.Trim());
+                ItemPrice = Convert.ToDecimal(ItemPriceTextBox.Text.Trim());
 
                 string query = "INSERT INTO Inventory (ItemName, ItemCount, ItemPrice) VALUES (@name, @count, @price)";
-                var args = new (string, dynamic)[]
-                {
-                ("@name", name),
-                ("@count", count),
-                ("@price", price)
+                var args = new (string, dynamic)[] {
+                    ("@name", ItemName),
+                    ("@count", ItemCount),
+                    ("@price", ItemPrice)
                 };
 
                 int affectedRows = Query.InsertUpdateDeleteQuery(query, args);
@@ -60,17 +63,16 @@ namespace Inventory
             else
             {
                 int id = Convert.ToInt32(ItemDataGridView.SelectedCells[0].Value);
-                string name = ItemNameTextBox.Text.Trim();
-                string count = ItemCountTextBox.Text.Trim();
-                string price = ItemPriceTextBox.Text.Trim();
+                ItemName = ItemNameTextBox.Text.Trim();
+                ItemCount = Convert.ToInt32(ItemCountTextBox.Text.Trim());
+                ItemPrice = Convert.ToDecimal(ItemPriceTextBox.Text.Trim());
 
                 string query = "UPDATE Inventory SET ItemName = @name, ItemCount = @count, ItemPrice = @price WHERE Id = @id";
-                var args = new (string, dynamic)[]
-                {
-                ("@name", name),
-                ("@count", count),
-                ("@price", price),
-                ("@id", id)
+                var args = new (string, dynamic)[] {
+                    ("@name", ItemName),
+                    ("@count", ItemCount),
+                    ("@price", ItemPrice),
+                    ("@id", id)
                 };
 
                 int affectedRows = Query.InsertUpdateDeleteQuery(query, args);
@@ -86,8 +88,7 @@ namespace Inventory
             int id = Convert.ToInt32(ItemDataGridView.SelectedCells[0].Value);
 
             string query = "DELETE FROM Inventory WHERE Id = @id";
-            var args = new (string, dynamic)[]
-            {
+            var args = new (string, dynamic)[] {
                 ("@id", id)
             };
 

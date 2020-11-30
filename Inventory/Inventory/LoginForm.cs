@@ -27,7 +27,7 @@ namespace Inventory
                 string username = UsernameTextBox.Text.Trim();
                 string password = PasswordTextBox.Text.Trim();
 
-                string query = "SELECT * FROM Account WHERE Username=@username";
+                string query = "SELECT TOP 1 * FROM Account WHERE Username=@username";
                 var args = new (string, dynamic)[]
                 {
                 ("@username", username)

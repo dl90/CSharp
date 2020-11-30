@@ -86,7 +86,7 @@
             // LoginImage
             // 
             this.LoginImage.Image = ((System.Drawing.Image)(resources.GetObject("LoginImage.Image")));
-            this.LoginImage.Location = new System.Drawing.Point(208, 87);
+            this.LoginImage.Location = new System.Drawing.Point(105, 28);
             this.LoginImage.Name = "LoginImage";
             this.LoginImage.Size = new System.Drawing.Size(256, 256);
             this.LoginImage.TabIndex = 5;
@@ -94,24 +94,25 @@
             // 
             // LoginPanel
             // 
-            this.LoginPanel.BackColor = System.Drawing.Color.Black;
+            this.LoginPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.LoginPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LoginPanel.Controls.Add(this.UsernameTextBox);
             this.LoginPanel.Controls.Add(this.UsernameLabel);
             this.LoginPanel.Controls.Add(this.LoginButton);
             this.LoginPanel.Controls.Add(this.PasswordLabel);
             this.LoginPanel.Controls.Add(this.PasswordTextBox);
-            this.LoginPanel.Location = new System.Drawing.Point(121, 370);
+            this.LoginPanel.Location = new System.Drawing.Point(12, 306);
             this.LoginPanel.Name = "LoginPanel";
             this.LoginPanel.Size = new System.Drawing.Size(426, 217);
             this.LoginPanel.TabIndex = 6;
             // 
             // LoginForm
             // 
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(678, 708);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(454, 543);
             this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.LoginImage);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)(this.LoginImage)).EndInit();
             this.LoginPanel.ResumeLayout(false);

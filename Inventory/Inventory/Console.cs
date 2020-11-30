@@ -89,5 +89,27 @@ namespace Inventory
                 form.Show();
             }
         }
+
+        private void InventoryMenuPurchase_Click(object sender, EventArgs e)
+        {
+            bool alreadyOpen = AlreadyOpen<PurchaseForm>();
+            if (!alreadyOpen)
+            {
+                PurchaseForm form = new PurchaseForm();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void InventoryMenuPurchaseHistory_Click(object sender, EventArgs e)
+        {
+            bool alreadyOpen = AlreadyOpen<PurchaseHistoryForm>();
+            if (!alreadyOpen)
+            {
+                PurchaseHistoryForm form = new PurchaseHistoryForm();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
     }
 }
