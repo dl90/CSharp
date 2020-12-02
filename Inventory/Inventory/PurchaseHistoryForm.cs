@@ -1,6 +1,6 @@
 ﻿using System.Data;
-using System.Windows.Forms;
 using Inventory.DB;
+using System.Windows.Forms;
 
 namespace Inventory
 {

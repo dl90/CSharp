@@ -35,6 +35,11 @@ namespace Inventory
             VendorTextBox.Text = "";
         }
 
+        private void UpdateCashOnHand()
+        {
+            Cash.Subtract(purchasePrice);
+        }
+
         private void InsertToInventory()
         {
             string query = "SELECT TOP 1 * FROM Inventory WHERE ItemName=@itemName";
@@ -59,10 +64,9 @@ namespace Inventory
                 int id = Convert.ToInt32(dt.Rows[0]["Id"]);
                 int prevCount = Convert.ToInt32(dt.Rows[0]["ItemCount"]);
                 decimal prevPrice = Convert.ToDecimal(dt.Rows[0]["ItemPrice"]);
-                
+
                 int newCount = prevCount + purchaseQuantity;
                 decimal newAvgPrice = Util.ReAverage(prevPrice, prevCount, purchasePrice, purchaseQuantity);
-                MessageBox.Show($"{newAvgPrice} price: {purchasePrice} quantity: {purchaseQuantity}");
 
                 string updateQuery = "UPDATE Inventory SET ItemCount = @count, ItemPrice = @price WHERE Id = @id";
                 var updateArgs = new (string, dynamic)[] {
@@ -95,8 +99,18 @@ namespace Inventory
                 };
 
                 int affectedRows = Query.InsertUpdateDeleteQuery(query, args);
-                InsertToInventory();
-                string msg = affectedRows == 1 ? "New purchase added" : "Something went wrong";
+
+                string msg;
+                if (affectedRows == 1)
+                {
+                    UpdateCashOnHand();
+                    InsertToInventory();
+                    msg = "New purchase added";
+                }
+                else
+                {
+                    msg = "Something went wrong";
+                }
                 MessageBox.Show(msg);
                 ResetInputText();
             }

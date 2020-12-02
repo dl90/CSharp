@@ -13,11 +13,6 @@ namespace Inventory
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new LoginForm());
-            // Application.Run(new AddUserForm());
-            // Application.Run(new Console());
-            // Application.Run(new UsersForm());
-            // Application.Run(new InventoryForm());
-            // Application.Run(new PurchaseForm());
         }
     }
 }

@@ -56,7 +56,7 @@ namespace Inventory
                 ResetInputText();
             }
         }
-
+        
         private void UpdateButton_Click(object sender, EventArgs e)
         {
             if (!ValidateFormInput()) MessageBox.Show("Invalid input");

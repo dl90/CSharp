@@ -46,10 +46,14 @@ namespace Inventory
             this.inventoryMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryMenuManage = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryMenuPurchase = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventoryMenuPurchaseHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventoryMenuSales = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventoryMenuSalesHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.inventoryMenuPurchaseHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.moneyMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.moneyMenuBalance = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +64,8 @@ namespace Inventory
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenu,
             this.adminMenu,
-            this.inventoryMenu});
+            this.inventoryMenu,
+            this.moneyMenu});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
@@ -165,7 +170,9 @@ namespace Inventory
             this.inventoryMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inventoryMenuManage,
             this.inventoryMenuPurchase,
-            this.inventoryMenuPurchaseHistory});
+            this.inventoryMenuPurchaseHistory,
+            this.inventoryMenuSales,
+            this.inventoryMenuSalesHistory});
             this.inventoryMenu.Name = "inventoryMenu";
             this.inventoryMenu.Size = new System.Drawing.Size(103, 29);
             this.inventoryMenu.Text = "&Inventory";
@@ -183,6 +190,27 @@ namespace Inventory
             this.inventoryMenuPurchase.Size = new System.Drawing.Size(246, 34);
             this.inventoryMenuPurchase.Text = "&Purchase";
             this.inventoryMenuPurchase.Click += new System.EventHandler(this.InventoryMenuPurchase_Click);
+            // 
+            // inventoryMenuPurchaseHistory
+            // 
+            this.inventoryMenuPurchaseHistory.Name = "inventoryMenuPurchaseHistory";
+            this.inventoryMenuPurchaseHistory.Size = new System.Drawing.Size(246, 34);
+            this.inventoryMenuPurchaseHistory.Text = "Purchase History";
+            this.inventoryMenuPurchaseHistory.Click += new System.EventHandler(this.InventoryMenuPurchaseHistory_Click);
+            // 
+            // inventoryMenuSales
+            // 
+            this.inventoryMenuSales.Name = "inventoryMenuSales";
+            this.inventoryMenuSales.Size = new System.Drawing.Size(246, 34);
+            this.inventoryMenuSales.Text = "&Sales";
+            this.inventoryMenuSales.Click += new System.EventHandler(this.InventoryMenuSales_Click);
+            // 
+            // inventoryMenuSalesHistory
+            // 
+            this.inventoryMenuSalesHistory.Name = "inventoryMenuSalesHistory";
+            this.inventoryMenuSalesHistory.Size = new System.Drawing.Size(246, 34);
+            this.inventoryMenuSalesHistory.Text = "Sales History";
+            this.inventoryMenuSalesHistory.Click += new System.EventHandler(this.InventoryMenuSalesHistory_Click);
             // 
             // statusStrip
             // 
@@ -202,12 +230,20 @@ namespace Inventory
             this.toolStripStatusLabel.Size = new System.Drawing.Size(60, 25);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // inventoryMenuPurchaseHistory
+            // moneyMenu
             // 
-            this.inventoryMenuPurchaseHistory.Name = "inventoryMenuPurchaseHistory";
-            this.inventoryMenuPurchaseHistory.Size = new System.Drawing.Size(246, 34);
-            this.inventoryMenuPurchaseHistory.Text = "Purchase History";
-            this.inventoryMenuPurchaseHistory.Click += new System.EventHandler(this.InventoryMenuPurchaseHistory_Click);
+            this.moneyMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.moneyMenuBalance});
+            this.moneyMenu.Name = "moneyMenu";
+            this.moneyMenu.Size = new System.Drawing.Size(83, 29);
+            this.moneyMenu.Text = "&Money";
+            // 
+            // moneyMenuBalance
+            // 
+            this.moneyMenuBalance.Name = "moneyMenuBalance";
+            this.moneyMenuBalance.Size = new System.Drawing.Size(173, 34);
+            this.moneyMenuBalance.Text = "&Balance";
+            this.moneyMenuBalance.Click += new System.EventHandler(this.MoneyMenuBalance_Click);
             // 
             // Console
             // 
@@ -253,6 +289,10 @@ namespace Inventory
         private System.Windows.Forms.ToolStripMenuItem inventoryMenuManage;
         private System.Windows.Forms.ToolStripMenuItem inventoryMenuPurchase;
         private System.Windows.Forms.ToolStripMenuItem inventoryMenuPurchaseHistory;
+        private System.Windows.Forms.ToolStripMenuItem inventoryMenuSales;
+        private System.Windows.Forms.ToolStripMenuItem inventoryMenuSalesHistory;
+        private System.Windows.Forms.ToolStripMenuItem moneyMenu;
+        private System.Windows.Forms.ToolStripMenuItem moneyMenuBalance;
     }
 }
 

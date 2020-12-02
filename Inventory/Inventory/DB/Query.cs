@@ -79,7 +79,7 @@ namespace Inventory.DB
                 try
                 {
                     SqlCommand cmd = new SqlCommand(query, conn);
-                    foreach ((string, dynamic) arg in args) 
+                    foreach ((string, dynamic) arg in args)
                     {
                         cmd.Parameters.AddWithValue(arg.Item1, arg.Item2);
                     }

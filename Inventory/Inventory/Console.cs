@@ -47,7 +47,7 @@ namespace Inventory
             this.Close();
         }
 
-        private bool AlreadyOpen<T>()
+        private bool AlreadyOpen<T>() where T : new()
         {
             bool alreadyOpened = false;
             foreach(Form child in this.MdiChildren)
@@ -107,6 +107,39 @@ namespace Inventory
             if (!alreadyOpen)
             {
                 PurchaseHistoryForm form = new PurchaseHistoryForm();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void InventoryMenuSales_Click(object sender, EventArgs e)
+        {
+            bool alreadyOpen = AlreadyOpen<SaleForm>();
+            if (!alreadyOpen)
+            {
+                SaleForm form = new SaleForm();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void InventoryMenuSalesHistory_Click(object sender, EventArgs e)
+        {
+            bool alreadyOpen = AlreadyOpen<SalesHistoryForm>();
+            if (!alreadyOpen)
+            {
+                SalesHistoryForm form = new SalesHistoryForm();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void MoneyMenuBalance_Click(object sender, EventArgs e)
+        {
+            bool alreadyOpen = AlreadyOpen<BalanceForm>();
+            if (!alreadyOpen)
+            {
+                BalanceForm form = new BalanceForm();
                 form.MdiParent = this;
                 form.Show();
             }
