@@ -1,0 +1,43 @@
+﻿@model IEnumerable<week_01.Models.Manufacturer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Manufacturer</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@ViewBag.Message
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">
+                Manufacturer
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.MfgDiscount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">
+                    @Html.DisplayFor(modelItem => item.Mfg)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MfgDiscount)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Mfg">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Mfg">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Mfg">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

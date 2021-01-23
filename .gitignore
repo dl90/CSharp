@@ -7,3 +7,8 @@
 **/obj
 **/Debug
 **/Properties
+**/wwwroot
+**/App.config
+**/packages
+**/Migrations
+**/appsettings.json

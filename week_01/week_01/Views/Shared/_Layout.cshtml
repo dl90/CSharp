@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <a asp-controller="Home" asp-action="Index">Products</a> |
+    <a asp-controller="Store" asp-action="Index">Stores</a> |
+    <a asp-controller="Mfg" asp-action="Index">Manufacturer</a>
+
+    <!-- The current view is swapped in here. -->
+    @RenderBody()
+
+    <!-- Reference jQuery scripts that are included with the web template. -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
