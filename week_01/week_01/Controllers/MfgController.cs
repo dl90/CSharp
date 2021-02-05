@@ -26,7 +26,8 @@ namespace week_01.Controllers
 
         // POST: Mfg/Create
         [HttpPost]
-        public IActionResult Create([Bind("Mfg,MfgDiscount")] Manufacturer manufacturer) {
+        public IActionResult Create([Bind("Mfg,MfgDiscount")] Manufacturer manufacturer)
+        {
             FoodStoreContext db = new FoodStoreContext();
             if (ModelState.IsValid)
             {
@@ -45,8 +46,8 @@ namespace week_01.Controllers
         {
             FoodStoreContext db = new FoodStoreContext();
             Manufacturer manufacturer = (from m in db.Manufacturers
-                                        where m.Mfg == mfg
-                                        select m).FirstOrDefault();
+                                         where m.Mfg == mfg
+                                         select m).FirstOrDefault();
             return View(manufacturer);
         }
 
@@ -82,8 +83,8 @@ namespace week_01.Controllers
             {
                 FoodStoreContext db = new FoodStoreContext();
                 var manufacturer = (from m in db.Manufacturers
-                               where m.Mfg == mfg
-                               select m).FirstOrDefault();
+                                    where m.Mfg == mfg
+                                    select m).FirstOrDefault();
                 db.Remove(manufacturer);
                 db.SaveChanges();
             }

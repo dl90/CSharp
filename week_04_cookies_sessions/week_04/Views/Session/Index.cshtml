@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+Refresh the browser:
+<ul>
+    <li>
+        If you see <b>Green</b> the session just started and a new time will
+        appear.
+    </li>
+    <li>
+        If you see <b>Blue</b> the session is in progress. The original start time will
+        appear.
+    </li>
+</ul>
+You may navigate to the About page to clear the session.
+<br />
+<br />
+<h3>@ViewBag.Color</h3>
+<h3>@ViewBag.SessionStart</h3>
+<h3>@ViewBag.FName</h3>

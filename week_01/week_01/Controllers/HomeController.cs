@@ -42,8 +42,8 @@ namespace week_01.Controllers
         {
             FoodStoreContext db = new FoodStoreContext();
             var product = (from p in db.Products
-                            where p.ProductId == id
-                            select p).FirstOrDefault();
+                           where p.ProductId == id
+                           select p).FirstOrDefault();
             return View(product);
         }
 

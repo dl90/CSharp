@@ -24,8 +24,8 @@ namespace week_01.Controllers
         {
             FoodStoreContext db = new FoodStoreContext();
             Store store = (from s in db.Stores
-                         where s.Branch == branchName
-                         select s).FirstOrDefault();
+                           where s.Branch == branchName
+                           select s).FirstOrDefault();
             return View(store);
         }
     }
