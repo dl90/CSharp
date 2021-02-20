@@ -14,7 +14,7 @@ namespace FoodStoreMVCStarter.Repositories
 
         public bool Update(string buildingName, int unitNum, int capacity)
         {
-            Building b = db.Buildings.Where(b => 
+            Building b = db.Buildings.Where(b =>
                 b.BuildingName == buildingName && b.UnitNum == unitNum)
                 .FirstOrDefault();
             if (b == null || capacity < 0) return false;

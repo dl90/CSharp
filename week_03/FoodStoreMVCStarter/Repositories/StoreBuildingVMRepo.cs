@@ -18,7 +18,7 @@ namespace FoodStoreMVCStarter.Repositories
             var query = from s in db.Stores
                         from b in db.Buildings
                         where
-                            s.BuildingName == b.BuildingName 
+                            s.BuildingName == b.BuildingName
                             && s.UnitNum == b.UnitNum
                         select new StoreBuildingVM()
                         {
@@ -31,8 +31,8 @@ namespace FoodStoreMVCStarter.Repositories
 
             var buildingJoin = from b in db.Buildings
                                from s in db.Stores
-                               .Where(store => 
-                                    store.BuildingName == b.BuildingName 
+                               .Where(store =>
+                                    store.BuildingName == b.BuildingName
                                     && store.UnitNum == b.UnitNum)
                                .DefaultIfEmpty()
                                select new StoreBuildingVM()
@@ -50,9 +50,9 @@ namespace FoodStoreMVCStarter.Repositories
         public StoreBuildingVM Get(string branch, string buildingName, int unitNum)
         {
             return GetAll()
-                .Where(sb => 
-                    sb.Branch == branch 
-                    && sb.BuildingName == buildingName 
+                .Where(sb =>
+                    sb.Branch == branch
+                    && sb.BuildingName == buildingName
                     && sb.UnitNum == unitNum)
                 .FirstOrDefault();
         }

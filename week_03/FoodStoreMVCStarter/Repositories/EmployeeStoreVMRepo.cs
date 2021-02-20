@@ -38,7 +38,7 @@ namespace FoodStoreMVCStarter.Repositories
 
                            select new EmployeeStoreVM()
                            {
-                               // Employee could be null. 
+                               // Employee could be null.
                                EmployeeID = (e.EmployeeId != null) ? e.EmployeeId : 0,
                                LastName = e.LastName ?? "",
                                FirstName = e.FirstName ?? "",
@@ -61,7 +61,7 @@ namespace FoodStoreMVCStarter.Repositories
 
         public bool Update(EmployeeStoreVM esVM)
         {
-            // Updating our ViewModel really requires updates to two separate tables. 
+            // Updating our ViewModel really requires updates to two separate tables.
 
             // Update the 'Store'.
             StoreRepo storeRepo = new StoreRepo(db);
