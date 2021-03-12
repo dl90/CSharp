@@ -16,10 +16,7 @@ namespace week_05_preclass_roles.Repositories
 
         public IEnumerable<UserVM> All()
         {
-            var users = _context.Users.Select(u => new UserVM()
-            {
-                Email = u.Email
-            });
+            var users = _context.Users.Select(u => new UserVM() { Email = u.Email });
             return users;
         }
     }

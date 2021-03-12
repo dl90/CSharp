@@ -1,0 +1,51 @@
+﻿@model IEnumerable<assignment_1.ViewModels.ClientBankAccountListVM>
+
+@{
+    ViewData["Title"] = "Accounts Summary";
+}
+
+<h1>@ViewBag.type Accounts Summary</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountType)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink("Details", "Details", new { clientID = item.ClientID, accountNum = item.AccountNum })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountType)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

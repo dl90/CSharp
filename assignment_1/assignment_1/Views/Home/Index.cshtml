@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+    @using (Html.BeginForm("Index", "Accounts", FormMethod.Get, new { enctype = "multipart/form-data" }))
+    {
+        @Html.DropDownList("type", new SelectList(ViewBag.AccountTypes, "Value", "Text"))
+        <input type="submit" />
+    }
+</div>

@@ -1,0 +1,30 @@
+Login name: <input type='text' [(ngModel)]='username' /><br />
+Password: <input type='text' [(ngModel)]='password' /><br />
+<input type='button' value='login' (click)='login()' />
+<br /><br />
+Token: {{token}}<br />
+Message: {{message}}
+<br /><br />
+
+<!-- Logs user out. -->
+<input type='button' value='Logout' (click)='logout()'>
+<br /><br />
+
+<!-- Gets content for authenticated users only. -->
+<input type='button' value='Get Secure Message' (click)='getSecureData()'><br />
+{{secureData}}
+<br /><br />
+
+<ul *ngFor='let ele of techArray'>
+  <li>{{ele.count}} {{ele.text}} <a href="{{ele.link}}">{{ele.link}}</a> </li>
+</ul>
+
+<!-- POSTS data to server but only if logged in. -->
+<input type='button' value='Post Secure Message' (click)='postSecureMessage()'><br />
+{{msgFromServer}}
+<br /><br />
+
+num_1: <input type='number' name='number_1' [(ngModel)]='num_1' /><br />
+num_2: <input type='number' name='number_2' [(ngModel)]='num_2' /><br />
+<input type='button' value='sum' (click)='postNumber()'><br />
+{{sum}}
