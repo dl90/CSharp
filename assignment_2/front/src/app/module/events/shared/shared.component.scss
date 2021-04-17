@@ -1,0 +1,13 @@
+.warning {
+  text-align: center;
+  color: orange;
+}
+
+.ng-invalid:not(form) {
+  border: 3px solid #a94442;
+}
+
+.message {
+  height: 40px;
+  text-align: center;
+}

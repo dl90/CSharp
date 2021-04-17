@@ -1,0 +1,81 @@
+<div id="create-event">
+  <h2>Create Event</h2>
+
+  <div class="message">
+    <div *ngIf="errorMessage" class="warning">{{errorMessage}}</div>
+    <div *ngIf="toastMessage">{{toastMessage}}</div>
+  </div>
+
+  <form [formGroup]="createForm" (ngSubmit)="submit()">
+
+    <div class="row">
+      <div class="col">
+        <label for="event-name">Event Name</label>
+      </div>
+      <div class="col">
+        <input id="event-name" type="text" formControlName="eventName" />
+      </div>
+    </div>
+    <div *ngIf="eventName.invalid && (eventName.dirty || eventName.touched)" class="warning">
+      <div *ngIf="eventName.errors.required">
+        Event name is required.
+      </div>
+      <div *ngIf="eventName.errors.maxlength">
+        Event name must be less than 30 characters long.
+      </div>
+      <div *ngIf="eventName.errors.pattern">
+        Username can only be letters, numbers, underscores and hyphens.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="event-date">Event Date</label>
+      </div>
+      <div class="col">
+        <input id="event-date" type="date" formControlName="eventDate" />
+      </div>
+    </div>
+    <div *ngIf="eventDate.invalid && (eventDate.dirty || eventDate.touched)" class="warning">
+      <div *ngIf="eventDate.errors.required">
+        Event date is required.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="event-time">Event Time</label>
+      </div>
+      <div class="col">
+        <input id="event-time" type="time" formControlName="eventTime" />
+      </div>
+    </div>
+    <div *ngIf="eventTime.invalid && (eventTime.dirty || eventTime.touched)" class="warning">
+      <div *ngIf="eventTime.errors.required">
+        Event time is required.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="event-desc">Event Description</label>
+      </div>
+      <div class="col">
+        <input id="event-desc" type="text" formControlName="eventDesc" />
+      </div>
+    </div>
+    <div *ngIf="eventDesc.invalid && (eventDesc.dirty || eventDesc.touched)" class="warning">
+      <div *ngIf="eventDesc.errors.required">
+        Event time is required.
+      </div>
+      <div *ngIf="eventDesc.errors.maxlength">
+        Event name must be less than 512 characters long.
+      </div>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Submit" [disabled]="!createForm.valid">
+    </div>
+
+  </form>
+</div>

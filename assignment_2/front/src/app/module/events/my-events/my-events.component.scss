@@ -1,0 +1,14 @@
+#my-events {
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 4px;
+  }
+
+  .col-lg {
+    width: 250px;
+  }
+  .col-sm {
+    width: 100px;
+  }
+}

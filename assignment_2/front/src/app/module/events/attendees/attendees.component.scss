@@ -1,0 +1,20 @@
+#attendees {
+  .event {
+    display: flex;
+    font-weight: 600;
+
+    label {
+      color: darkgrey;
+    }
+
+    div {
+      margin: 10px 20px;
+    }
+  }
+
+  .users {
+    font-size: larger;
+    margin: 3px;
+    padding-left: 100px;
+  }
+}

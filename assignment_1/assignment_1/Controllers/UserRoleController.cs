@@ -37,8 +37,7 @@ namespace assignment_1.Controllers
 
         public async Task<IActionResult> Detail(string userName)
         {
-            UserRoleRepo userRoleRepo = new UserRoleRepo(_serviceProvider);
-            var roles = await userRoleRepo.GetUserRoles(userName);
+            var roles = await _userRoleRepo.GetUserRoles(userName);
             ViewBag.UserName = userName;
             return View(roles);
         }

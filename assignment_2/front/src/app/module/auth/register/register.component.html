@@ -1,0 +1,115 @@
+<div id="register">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="submit()">
+
+    <div class="row">
+      <label for="username">Username</label>
+      <input id="username" type="text" formControlName="username" />
+    </div>
+    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="warning">
+      <div *ngIf="username.errors.required">
+        Username is required.
+      </div>
+      <div *ngIf="username.errors.minlength">
+        Username must be at least 3 characters long.
+      </div>
+      <div *ngIf="username.errors.maxlength">
+        Username must be less than 30 characters long.
+      </div>
+      <div *ngIf="username.errors.pattern">
+        Username can only be letters, numbers, underscores and hyphens.
+      </div>
+    </div>
+
+    <div class="row">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" formControlName="email" />
+    </div>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="warning">
+      <div *ngIf="email.errors.required">
+        Email is required.
+      </div>
+      <div *ngIf="email.errors.email">
+        Email must be valid.
+      </div>
+    </div>
+
+    <div class="row">
+      <label for="first_name">First Name</label>
+      <input id="first_name" name="firstName" type="text" formControlName="firstName" />
+    </div>
+    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="warning">
+      <div *ngIf="firstName.errors.required">
+        First name is required.
+      </div>
+      <div *ngIf="firstName.errors.maxlength">
+        First name must be less than 30 characters long.
+      </div>
+      <div *ngIf="firstName.errors.pattern">
+        First name can only be letters.
+      </div>
+    </div>
+
+    <div class="row">
+      <label for="last_name">Last Name</label>
+      <input id="last_name" name="lastName" type="text" formControlName="lastName" />
+    </div>
+    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="warning">
+      <div *ngIf="lastName.errors.required">
+        Last name is required.
+      </div>
+      <div *ngIf="lastName.errors.maxlength">
+        Last name must be less than 30 characters long.
+      </div>
+      <div *ngIf="lastName.errors.pattern">
+        Last name can only be letters.
+      </div>
+    </div>
+
+    <div class="row">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" formControlName="password" />
+    </div>
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="warning">
+      <div *ngIf="password.errors.required">
+        Password is required.
+      </div>
+      <div *ngIf="password.errors.minlength">
+        Password must be at least 6 characters long.
+      </div>
+      <div *ngIf="password.errors.maxlength">
+        Password must be less than 100 characters long.
+      </div>
+      <div *ngIf="password.errors.pattern">
+        Password can not include spaces.
+      </div>
+    </div>
+
+    <div class="row">
+      <label for="passwordConfirm">Password Confirm</label>
+      <input id="passwordConfirm" name="passwordConfirm" type="password" formControlName="passwordConfirm" />
+    </div>
+    <div *ngIf="passwordConfirm.invalid && (passwordConfirm.dirty || passwordConfirm.touched)" class="warning">
+      <div *ngIf="passwordConfirm.errors.required">
+        Password is required.
+      </div>
+      <div *ngIf="passwordConfirm.errors.minlength">
+        Password must be at least 6 characters long.
+      </div>
+      <div *ngIf="passwordConfirm.errors.maxlength">
+        Password must be less than 100 characters long.
+      </div>
+      <div *ngIf="passwordConfirm.errors.mismatch">
+        Passwords must match.
+      </div>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Register" [disabled]="!registerForm.valid">
+    </div>
+
+    <div class="warning">{{registerError}}</div>
+    <div>{{registerMsg}}</div>
+    <a *ngIf="verifyLink" href="{{verifyLink}}" target="_blank">verifyLink</a>
+  </form>
+</div>

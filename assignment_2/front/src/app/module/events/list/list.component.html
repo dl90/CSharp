@@ -1,0 +1,53 @@
+<div id="events">
+  <h2>Events</h2>
+
+  <div class="message">
+    <div *ngIf="toastMessage">{{ toastMessage }}</div>
+    <div *ngIf="errorMessage" class="warning">{{ errorMessage }}</div>
+  </div>
+
+  <div *ngIf="isAdmin">
+    <h3>
+      <a [routerLink]="['/events/create']">
+        Create Event
+      </a>
+    </h3>
+  </div>
+
+  <div *ngFor="let e of events">
+
+    <div class="card">
+      <section>
+        <div class="col">
+          <label>Event Name</label>{{ e.name }}
+        </div>
+
+        <div class="col">
+          <label>Date</label>{{ e.dateTime | date: 'MMM d' }}
+        </div>
+
+        <div class="col">
+          <label>Time</label>{{ e.dateTime | date: 'h:mm a' }}
+        </div>
+
+        <div *ngIf="isAdmin; else show">
+          <a routerLink="/events/attendees/{{e.id}}">View Attendees</a> |
+          <a href="#" (click)="delete(e)">Delete Event</a>
+          <div class="row">
+            <button (click)="attend(e)" [disabled]="myEvents.includes(e.id)">Attend</button>
+          </div>
+        </div>
+        <ng-template #show>
+          <button (click)="attend(e)" [disabled]="myEvents.includes(e.id)">Attend</button>
+        </ng-template>
+      </section>
+
+      <section>
+        <div>
+          <label>Description: </label>{{ e.description }}
+        </div>
+      </section>
+    </div>
+
+  </div>
+</div>

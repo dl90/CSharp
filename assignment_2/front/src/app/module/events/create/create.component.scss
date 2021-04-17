@@ -1,0 +1,30 @@
+#create-event {
+  width: 500px;
+  margin: auto;
+
+  .row {
+    width: 350px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
+    padding-left: 20px;
+  }
+
+  .col {
+    width: 50%;
+  }
+
+  label {
+    font-weight: 600;
+  }
+
+  input {
+    width: 100%;
+    padding: 0;
+    height: 20px;
+  }
+
+  input[type="submit"] {
+    padding: 5px 15px;
+  }
+}

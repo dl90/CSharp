@@ -1,0 +1,18 @@
+<div id="attendees">
+  <h2>Attendees</h2>
+
+  <div class="message">
+    <div *ngIf="errorMessage" class="warning">{{ errorMessage }}</div>
+  </div>
+
+  <div class="event">
+    <div><label>Event Name: </label>{{ event.name }}</div>
+    <div><label>Date: </label>{{ event.dateTime | date: 'MMM d' }}</div>
+    <div><label>Time: </label>{{ event.dateTime | date: 'h:mm a' }}</div>
+  </div>
+  <hr>
+
+  <div *ngFor="let user of users" class="users">
+    {{user.firstName}} {{user.lastName}}
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Detail
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/contact"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>{{id}}</h1>
+  This is some detail <span *ngIf="item">about the icon named {{item.icon}}</span>
+</ion-content>

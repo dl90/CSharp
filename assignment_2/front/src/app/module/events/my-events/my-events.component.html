@@ -1,0 +1,32 @@
+<div id="my-events">
+  <h2>My Events</h2>
+
+  <div class="message">
+    <div *ngIf="toastMessage">{{ toastMessage }}</div>
+    <div *ngIf="errorMessage" class="warning">{{ errorMessage }}</div>
+    <h3 *ngIf="myEvents?.length == 0">You do not have any events</h3>
+  </div>
+
+  <div *ngFor="let e of myEvents">
+
+    <div class="row">
+      <div class="col-lg">
+        <label>Event Name: </label>{{ e.name }}
+      </div>
+
+      <div class="col-sm">
+        {{ e.dateTime | date: 'MMM d' }}
+      </div>
+
+      <div class="col-sm">
+        {{ e.dateTime | date: 'h:mm a' }}
+      </div>
+
+      <div class="col-lg">
+        <button (click)="notAttend(e)">No longer attending</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -47,7 +47,6 @@ namespace assignment_1.Controllers
             if (ModelState.IsValid)
             {
                 bool success = _clientBankAccountRepo.Update(account);
-                Console.WriteLine(account);
                 if (!success) return View(account);
             }
 
